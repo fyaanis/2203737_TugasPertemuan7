@@ -1,0 +1,27 @@
+package Pertemuan7;
+
+import static Pertemuan7.StopWatch.selectionSort;
+
+/**
+ *
+ * @author NISWA
+ */
+public class main {
+        public static void main(String[] args) {
+        // Membuat objek stopwatch
+        StopWatch stopwatch = new StopWatch();
+
+        // Pengujian selection sort
+        int[] arr = new int[100000];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = arr.length - i;
+        }
+        
+        stopwatch.start();
+        selectionSort(arr);
+        stopwatch.stop();
+
+        // Menampilkan waktu eksekusi
+        System.out.println("Waktu eksekusi pengurutan 100.000 angka menggunakan selection sort: " + stopwatch.getElapsedTime() + " milidetik");
+    }
+}
